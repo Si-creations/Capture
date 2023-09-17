@@ -5,6 +5,8 @@ import diaphragm from "../img/diaphragm.svg";
 import money from "../img/money.svg";
 import teamwork from "../img/teamwork.svg";
 import home2 from '../img/home2.png'
+// Styles
+
 
 const ServicesSection = () => {
   return (
@@ -50,5 +52,7 @@ const ServicesSection = () => {
     </div>
   );
 };
+
+
 
 export default ServicesSection;
