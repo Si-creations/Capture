@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
     body{
         background: #1b1b1b;
+        font-family: 'Inter', sans-serif;
     }
 
     button {
@@ -20,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
         border: 3px solid #23d997;
         background: transparent;
         color: white;
+        font-family: 'Inter', sans-serif;
         transition: all 0.5s ease;
         &:hover{
             background-color: #23d997;
@@ -28,13 +30,14 @@ const GlobalStyle = createGlobalStyle`
     }
     h2{
         font-weight:lighter;
-        font-size: 3rem;
+        font-size: 2rem;
     }
     h3 {
         color: white;
     }
     h4{
         font-weight: bold;
+        font-size: 2rem;
     }
     a{
         font-size: 1.1rem;
@@ -44,9 +47,9 @@ const GlobalStyle = createGlobalStyle`
         color: #23d997;
     }
     p{
-        padding: 3rem 0rem;
+        padding: 2rem 0rem;
         color: #ccc;
-        font-size: 1.4rem;
+        font-size: 1rem;
         line-height: 150%;
     }
 `;

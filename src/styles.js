@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 // Styled Component *1
+
 export const About = styled.div`
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 10rem;
+  padding: 2rem 5rem;
   color: white;
+  margin-bottom: 3rem;
 `;
 export const Description = styled.div`
   flex: 1;
