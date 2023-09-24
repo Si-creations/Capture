@@ -24,6 +24,15 @@ const MovieDetail = () => {
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="movie" />
           </Headline>
+          <Awards>
+            {movie.awards.map((award) => (
+              <Award
+                title={award.title}
+                description={award.description}
+                key={award.title}
+              />
+            ))}
+          </Awards>
         </Details>
       )}
     </>
@@ -31,23 +40,42 @@ const MovieDetail = () => {
 };
 
 const Details = styled.div`
-color:white;
+  background: white;
+  color: white;
 `;
 const Headline = styled.div`
-min-height: 90vh;
-padding-top: 20vh;
-position: relative;
-h2{
+  min-height: 90vh;
+  padding-top: 20vh;
+  position: relative;
+  h2 {
     position: absolute;
-    top:10%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
-}
-img {
+  }
+  img {
     width: 100%;
     height: 70vh;
-    object-fit: cover;
-}
+    object-fit: fill;
+  }
 `;
+const Awards = styled.div`
+  min-height: 80vh;
+  display:flex;
+  margin: 5rem 10rem;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+// Award Component
+const Award = ({ title, description }) => {
+  return (
+    <div>
+      <h3>{title}</h3>
+      <div className="line"></div>
+      <p>{description}</p>
+    </div>
+  );
+};
 
 export default MovieDetail;
