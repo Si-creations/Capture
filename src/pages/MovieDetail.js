@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { MovieState } from "../movieState";
+// Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
 const MovieDetail = () => {
   const url = useLocation();
@@ -19,7 +22,12 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <Details>
+        <Details //*2
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           <Headline>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="movie" />
@@ -33,14 +41,16 @@ const MovieDetail = () => {
               />
             ))}
           </Awards>
+          <ImageDisplay>
+            <img src={movie.secondaryImg} alt="movie" />
+          </ImageDisplay>
         </Details>
       )}
     </>
   );
 };
 
-const Details = styled.div`
-  background: white;
+const Details = styled(motion.div)` //*2
   color: white;
 `;
 const Headline = styled.div`
@@ -56,25 +66,48 @@ const Headline = styled.div`
   img {
     width: 100%;
     height: 70vh;
-    object-fit: fill;
+    object-fit: cover;
   }
 `;
 const Awards = styled.div`
   min-height: 80vh;
-  display:flex;
+  display: flex;
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+`;
+const AwardStyle = styled.div`
+  padding: 5rem;
+  h3 {
+    font-size: 2rem;
+  }
+  .line {
+    width: 100%;
+    background: #23d997;
+    height: 0.5rem;
+    margin: 1rem 0rem;
+  }
+  p {
+    padding: 2rem 0rem;
+  }
+`;
+const ImageDisplay = styled.div`
+  min-height: 50vh;
+  img {
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
+  }
 `;
 
 // Award Component
 const Award = ({ title, description }) => {
   return (
-    <div>
+    <AwardStyle>
       <h3>{title}</h3>
       <div className="line"></div>
       <p>{description}</p>
-    </div>
+    </AwardStyle>
   );
 };
 

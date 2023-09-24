@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
     }
     h2{
         font-weight:lighter;
-        font-size: 2rem;
+        font-size: 3rem;
     }
     h3 {
         color: white;
@@ -49,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
     p{
         padding: 2rem 0rem;
         color: #ccc;
-        font-size: 1rem;
+        font-size: 1.4rem;
         line-height: 150%;
     }
 `;
