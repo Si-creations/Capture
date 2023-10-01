@@ -7,7 +7,7 @@ export const pageAnimation = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: .5,
+      duration: 0.5,
       ease: "easeOut",
       when: "beforeChildren",
       staggerChildren: 0.25, //oneskorenie medzi animáciami pre rôzne deti alebo prvky
@@ -69,6 +69,17 @@ export const slider = {
 export const slidercontainer = {
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: 0.15, ease: "easeOut" } },
+};
+
+export const scrollReveal = {
+  hidden: { opacity: 0, scale: 1.2, transition: { duration: 0.5 } },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 
 // Everywhere where we want to use animations there needs to be these imports. The second one is the accual animation > if we are using animations on styled components thy need to be adjusted(upraveny) to > const *name* = styled(motion.div)
